@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>OAZA MUSKA VODA-KLADANJ</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        a-scene {
+            width: 90%;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio-bosnian">
+        <source src="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/muskavodabosanski.mp3?v=1743104719931" type="audio/mpeg">
+    </audio>
+    <audio id="audio-english">
+        <source src="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/muskavodaengleski.mp3?v=1743104758400" type="audio/mpeg">
+    </audio>
+    <audio id="audio-german">
+        <source src= "https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/muskavodaNjemacki.mp3?v=1743104798844" type="audio/mpeg">
+    </audio>
+    <audio id="audio-italian">
+        <source src="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/muskavodaitalijanski.mp3?v=1743104843707" type="audio/mpeg">
+    </audio>
+    <audio id="audio-turkish">
+        <source src="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/muskavodaturski.mp3?v=1743104877753" type="audio/mpeg">
+    </audio>
+
+  
+    <a-scene embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;">
+        <a-plane color="#008000" height="3.5" width="6.5" position="0 0.5 -5" opacity="0.9"></a-plane>
+
+       <a-entity 
+            gltf-model="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/grbOpstine.glb?v=1743104926368" 
+            position="-2 1 -5" 
+            scale="1 1 1" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+      <a-entity 
+    gltf-model="https://cdn.glitch.global/76d654a5-247c-4c45-8edb-052db5bb34bb/tripo_pbr_model_ff99fdf7-9354-4a0a-bb27-64eb9002891a.glb?v=1743105305305" 
+    position="2 1 -5" 
+    scale="1 1 1" 
+    rotation="0 240 0" 
+    animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+</a-entity>
+      
+      
+      
+  
+
+<a-entity id="eng-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: red" position="-2.5 2 -4.9"
+          text="value: ENG; color: white; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="deu-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: yellow" position="-1 2 -4.9"
+          text="value: DEU; color: black; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="ita-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: blue" position="0.5 2 -4.9"
+          text="value: ITA; color: white; align: center; width: 3;">
+</a-entity>
+
+<a-entity id="tur-button" geometry="primitive: plane; height: 0.5; width: 1.5"
+          material="color: brown" position="2 2 -4.9"
+          text="value: TUR; color: white; align: center; width: 3;">
+</a-entity>
+
+
+        <a-entity position="0 0.6 -4.9">
+            <a-text value= "Skrivena medju stoljetnim sumama Kladnja, Muska voda nije obican izvor. Vec vijekovima price o njoj sapucu među planinskim vjetrovima, prenoseci se s koljena na koljeno. Neki kazu da ima cudesna svojstva, drugi tvrde da je to samo legenda. Ali jedno je sigurno – oni koji je probaju, osjete nešto drugacije.Prema predanju, drevni ratnici su dolazili na ovaj izvor prije odlaska u bitke, vjerujuci da ce im donijeti snagu i izdrzljivost. Putnici i umorni namjernici su se osvjezavali njenim kapima i nastavljali put laganim korakom, osjećajuci nevjerovatnu energiju kako im prolazi kroz tijelo. Nije ni cudo da se za nju veze mistika i da je narod od davnina naziva posebnim darom prirode.
+Hemijske analize potvrdjuju da je bogata mineralima, ali njenu tajnu ne može objasniti ni nauka – mora se dozivjeti. Mozda je to samo obicna voda, a možda u njoj zivi nešto što covjek još uvijek ne razumije.
+Da li si spreman okusiti tajnu Muske vode?"
+                    color="#FFFF00" width="4.5" wrap-count="50" align="center" scale="0.7 0.7 0.7">
+            </a-text>
+        </a-entity>
+
+         
+        <!-- Dodani tekst ispod žutog teksta -->
+        <a-entity position="0 -0.8 -4.9" id="location-link">
+            <a-text 
+                value="Lokacija:" 
+                position="-2 0 0.05" 
+                color="#000000"
+                align="center"
+                scale="1.2 1.4 1.4"
+                letter-spacing="1">
+            </a-text>
+           <!-- Crvena pozadina samo za "Klikni ovde" -->
+    <a-plane 
+        color="#FF0000" 
+        height="0.5" 
+        width="1.6" 
+        opacity="0.5" 
+        position="-0.3 0 0.06">
+    </a-plane>
+
+    <!-- "Klikni ovde" na crvenoj pozadini -->
+    <a-text 
+        value="Klikni ovde" 
+        position="-0.4 0 0.06"  
+        color="#000000"
+        align="center"
+        scale="1.2 1.2 1.2" 
+        letter-spacing="1"
+        class="clickable">
+    </a-text>
+          
+          
+        </a-entity>
+      
+      
+      
+      
+      
+      
+        <a-entity 
+            gltf-model="" 
+            position="-2 1 -5" 
+            scale="0.5 0.5 0.5" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+        <a-entity 
+            gltf-model="" 
+            position="2 1 -5" 
+            scale="0.5 0.5 0.5" 
+            rotation="0 240 0" 
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+        <a-entity camera look-controls position="0 0 0" fov="85">
+            <a-cursor color="#FF0000" radius="0.05"></a-cursor>
+        </a-entity>
+    </a-scene>
+
+    <script>
+        let bosnianAudio = document.getElementById('audio-bosnian');
+        let englishAudio = document.getElementById('audio-english');
+        let germanAudio = document.getElementById('audio-german');
+        let italianAudio = document.getElementById('audio-italian');
+        let turkishAudio = document.getElementById('audio-turkish');
+
+        function stopAllAudio() {
+            [bosnianAudio, englishAudio, germanAudio, italianAudio, turkishAudio].forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        }
+
+        function playAudio(audioElement) {
+            stopAllAudio();
+            audioElement.play();
+        }
+
+        document.getElementById('eng-button').addEventListener('mouseenter', () => playAudio(englishAudio));
+        document.getElementById('deu-button').addEventListener('mouseenter', () => playAudio(germanAudio));
+        document.getElementById('ita-button').addEventListener('mouseenter', () => playAudio(italianAudio));
+        document.getElementById('tur-button').addEventListener('mouseenter', () => playAudio(turkishAudio));
+
+        // window.addEventListener('load', () => {
+        //     bosnianAudio.play().catch(e => console.log("Audio autoplay blokiran: " + e));
+        // });
+      
+      window.addEventListener('load', () => {
+    document.body.addEventListener('click', () => {
+        if (bosnianAudio.paused) {
+            bosnianAudio.play();
+        }
+    }, { once: true }); // Pokreće se samo jednom
+});
+
+       document.getElementById('location-link').addEventListener('click', () => {
+    window.location.href = 'https://www.google.com/maps/dir/?api=1&destination= 44.23778489051734, 18.592225260016594   &travelmode=driving';
+});
+      
+      
+    </script>
+</body>
+</html>
